@@ -9,9 +9,9 @@
 # pip install openai
 
 directories:
-  data_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\docs"
-  persist_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\vectordb\\processed\\chroma"
-  custom_persist_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\vectordb\\uploaded\\chroma"
+  data_directory: ""
+  persist_directory: ""
+  custom_persist_directory: ""
 
 embedding_model_config:
   engine: "sentence-transformers/all-MiniLM-L6-v2"
@@ -79,7 +79,7 @@ retrieval_config:
 
 serve:
   # Change flask app endpoint for the right one
-  flask_app_endpoint: "https://f227-34-125-203-110.ngrok-free.app"
+  flask_app_endpoint: ""
 
 memory:
   number_of_q_a_pairs: 2

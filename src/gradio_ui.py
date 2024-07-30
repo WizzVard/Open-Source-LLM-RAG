@@ -9,7 +9,7 @@ CONFIG = LoadConfig()
 
 with gr.Blocks() as demo:
     with gr.Tabs():
-        with gr.TabItem("RAG-Mistral7b"):
+        with gr.TabItem("Open Source LLM RAG"):
             ##################
             # First ROW:
             ##################
