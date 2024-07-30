@@ -2,6 +2,9 @@
 
 Welcome to the Open Source LLM RAG Model project! This project leverages the power of large language models (LLMs) to answer questions and summarize content from local PDF files. It supports interactive document processing through a user-friendly Gradio interface, providing functionalities such as question answering and summarization. The project utilizes the Mistral 7B model and allows users to compare performance with GPT-4o-mini.
 
+![](readme_files/program_cover_1.png)
+![](readme_files/program_cover_2.png)
+
 ## Features
 
 - **Question Answering**: Ask questions based on the content of local PDF files and receive accurate answers.
