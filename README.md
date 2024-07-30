@@ -1,6 +1,6 @@
-# Open-Source-LLM-RAG-ChatBot
+# Open-Source LLM RAG and Summarization With FastAPI
 
-Welcome to the Open Source LLM RAG Model project! This project leverages the power of large language models (LLMs) to answer questions and summarize content from local PDF files. It supports interactive document processing through a user-friendly Gradio interface, providing functionalities such as question answering and summarization. The project utilizes the Mistral 7B model and allows users to compare performance with GPT-4o-mini.
+Welcome to the Open Source LLM RAG Model project! This project utilizes Google Colab to initialize and load the model, as well as to create a FastAPI endpoint. Open Source LLM Mistral 7b can answer questions and summarize content based on local and uploaded PDF files. It supports interactive document processing through a user-friendly Gradio interface, providing functionalities such as question answering and summarization. The project utilizes the Mistral 7B model and allows users to compare performance with GPT-4o-mini.
 
 ![](readme_files/program_cover_1.png)
 ![](readme_files/program_cover_2.png)
