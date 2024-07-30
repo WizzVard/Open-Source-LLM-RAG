@@ -1,0 +1,85 @@
+# requirements:
+# pip install langchain-community
+# pip install langchain-chroma
+# pip install gradio
+# pip install pyprojroot
+# pip install sentence-transformers
+# pip install pypdf
+# pip install chromadb
+# pip install openai
+
+directories:
+  data_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\docs"
+  persist_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\vectordb\\processed\\chroma"
+  custom_persist_directory: "C:\\Users\\WizzVard\\PycharmProjects\\RAG-GPT\\data\\vectordb\\uploaded\\chroma"
+
+embedding_model_config:
+  engine: "sentence-transformers/all-MiniLM-L6-v2"
+
+openai_config:
+  system_message: |
+    ### Instructions ###
+    Role: You are a knowledgeable chatbot.
+    Task: You will receive a chat history, user's question, and content retrieved from a vector database.
+    Your task is to respond to the user's question using only the information provided in the retrieved content.
+    Do not use any external knowledge or information beyond what is provided.
+    Focus: Ensure your response is clear, concise, and directly addresses the user's question.
+    Format: Structure your response in a way that is easy to read and understand.
+
+  user_message: |
+    ### Chat history ###
+    
+    {}
+    
+    ### Retrieved Content ###
+    
+    {}
+    
+    ### User's Question ###
+    
+    {}
+
+  model_name: "gpt-4o-mini"
+
+llm_config:
+  max_new_tokens: 150
+  temperature: 0.7
+  llm_template: |
+      ### Instructions ###
+      Role: You are a knowledgeable chatbot.
+      Task: You will receive a chat history, user's question and content retrieved from a vector database.
+      Your task is to respond to the user's question using only the information provided in the retrieved content.
+      Do not use any external knowledge or information beyond what is provided.
+      Focus: Ensure your response is clear, concise, and directly addresses the user's question.
+      Format: Structure your response in a way that is easy to read and understand.
+  
+      ### Chat history ###
+      {}
+  
+      ### Retrieved Content ###
+      {}
+  
+      ### User's Question ###
+      {}
+
+summarizer_config:
+  max_final_token: 3000
+  character_overlap: 100
+  token_threshold: 0
+  summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to summarize and keep all the key information.\
+  Keep the maximum length of summary within {} number of tokens."
+  final_summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to give a comprehensive summary and keep all the key information."
+
+splitter_config:
+  chunk_size: 1500
+  chunk_overlap: 500
+
+retrieval_config:
+  k: 3
+
+serve:
+  # Change flask app endpoint for the right one
+  flask_app_endpoint: "https://f227-34-125-203-110.ngrok-free.app"
+
+memory:
+  number_of_q_a_pairs: 2
